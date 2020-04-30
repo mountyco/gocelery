@@ -93,9 +93,6 @@ func NewAMQPCeleryBrokerByConnAndChannel(conn *amqp.Connection, channel *amqp.Ch
 	if err := broker.Qos(broker.rate, 0, false); err != nil {
 		panic(err)
 	}
-	if err := broker.StartConsumingChannel(); err != nil {
-		panic(err)
-	}
 	return broker
 }
 
